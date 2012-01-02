@@ -3,8 +3,10 @@
 *.swo
 .DS_Store
 
-/log/*
-/*.log
+log/*
+*.log
+
+tmp/*
 
 db/development.sqlite3
 db/test.sqlite3
