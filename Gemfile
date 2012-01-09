@@ -5,6 +5,7 @@ gem 'sqlite3', '1.3.3'
 gem 'builder', '2.1.2'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
+gem 'paperclip'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

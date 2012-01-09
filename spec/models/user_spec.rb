@@ -2,12 +2,14 @@
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean         default(FALSE)
 
 require 'spec_helper'
 
@@ -158,6 +160,17 @@ describe User do
     it "should be convertible to an admin" do
       @user.toggle!(:admin)
       @user.should be_admin
+    end
+  end
+
+  describe "Image associations" do
+  
+    before(:each) do
+      @user = User.create(@attr)
+    end
+
+    it "should have an image attribute" do
+      @user.should respond_to(:images)
     end
   end
 end
