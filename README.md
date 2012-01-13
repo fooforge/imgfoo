@@ -51,3 +51,11 @@ Participation is welcome. Simply fork it on Github and send me a pull request.
 * [The Rails Tutorial](http://ruby.railstutorial.org) (you simply rock!)
 * [Albumdy](https://github.com/rapind/albumdy) for a couple of ideas
 * [Blueprint CSS](http://blueprintcss.org/) for making design easier
+
+* Image attributions
+    * [CIDE](http://www.flickr.com/photos/sono/6686795309/) by [sonojacker](http://www.flickr.com/photos/sono/)
+    * [Pierre-Etienne](http://www.flickr.com/photos/lazulibeaubien/6686843401/) by [Pierre-Etienne Bergeron](http://www.flickr.com/photos/lazulibeaubien/)
+    * [Broke](http://www.flickr.com/photos/psyberartist/6686822483/) by [psyberartist](http://www.flickr.com/photos/psyberartist/)
+    * [Stirling BW](http://www.flickr.com/photos/mmoscosa/6686833949/) by [mmoscosa](http://www.flickr.com/photos/mmoscosa/)
+    * [Stirling countryside](http://www.flickr.com/photos/mmoscosa/6686826627/) by [mmoscosa](http://www.flickr.com/photos/mmoscosa/)
+    * [Firemaster](http://www.flickr.com/photos/generated/6686796195/) by [jared](http://www.flickr.com/photos/generated/)
