@@ -1,0 +1,12 @@
+<nav id="user_nav" class="round">
+  <ul>
+    <% if signed_in? %>
+    <li>Logged in as <%= link_to current_user.name, current_user %></li>
+    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+    <% else %>
+    <li>Logged in as nobody</li>
+    <li><%= link_to "Sign in", signin_path %></li>
+    <% end %>
+  </ul>
+</nav>

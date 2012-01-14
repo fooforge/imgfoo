@@ -1,23 +1,12 @@
 <header>
-<!--  <% logo = image_tag("logo_small.png", :alt => "IMGfoo", :class => "round") %>-->
+<!--  <% logo = image_tag("logo_small.png", :alt => "IMGfoo") %>-->
   <%= link_to logo, root_path %>
-  <nav class="round">
+  <nav id="main_nav">
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Images", images_path %></li>
-      <% if signed_in? %>
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li><br />
-      <% end %>
-
       <% if signed_in? and current_user.admin? %>
-      <li><%= link_to "Users", users_path %></li><br />
-      <% end %>
-
-      <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-      <% else %>
-      <li><%= link_to "Sign in", signin_path %></li>
+      <li><%= link_to "Users", users_path %></li>
       <% end %>
     </ul>
   </nav>

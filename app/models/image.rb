@@ -13,5 +13,5 @@ class Image < ActiveRecord::Base
 
   belongs_to :user
 
-  has_attached_file :photo, :styles => { :thumb => "80x80>" }
+  has_attached_file :photo, :styles => { :large => "800x800>", :medium => "500x500>", :thumb => "100x100>" }
 end

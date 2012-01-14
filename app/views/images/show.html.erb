@@ -1,5 +1,6 @@
 <% if @image.photo.exists? then %>
 The title: <%= @image.title %><br />
-This is it: <%= image_tag @image.photo.url %><br />
+Large: <%= image_tag @image.photo.url(:large) %><br />
+Medium: <%= image_tag @image.photo.url(:medium) %><br />
 Thumb: <%= image_tag @image.photo.url(:thumb) %>
 <% end %>
