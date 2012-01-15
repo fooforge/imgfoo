@@ -1,6 +1,6 @@
 <% if @image.photo.exists? then %>
 The title: <%= @image.title %><br />
-Large: <%= image_tag @image.photo.url(:large) %><br />
+Large: <%= link_to(image_tag(@image.photo.url(:large)), @image.photo.url, :class => "top_up") unless @image.photo.nil? %><br />
 Medium: <%= image_tag @image.photo.url(:medium) %><br />
 Thumb: <%= image_tag @image.photo.url(:thumb) %>
 <% end %>
