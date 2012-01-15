@@ -7,7 +7,11 @@ class ImagesController < ApplicationController
 
   def create
     @image = current_user.images.build(params[:image])
-    @image.save!
+    if @image.save!
+      flash[:success] = "Image upload succeeded."
+    else
+      logger.debug "#{@image.error.inspect}"
+    end
 
     redirect_to @image
   end

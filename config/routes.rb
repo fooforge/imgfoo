@@ -11,6 +11,8 @@ Imgfoo::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
 
+  match '/not_found', :to => "pages#not_found"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

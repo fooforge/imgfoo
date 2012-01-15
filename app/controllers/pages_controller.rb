@@ -15,4 +15,8 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+
+  def not_found
+    @title = "404"
+  end
 end
