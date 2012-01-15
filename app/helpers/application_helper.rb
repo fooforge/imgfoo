@@ -1,6 +1,5 @@
 module ApplicationHelper
 
-
   def title
     base_title = "IMGfoo"
     if @title.nil?

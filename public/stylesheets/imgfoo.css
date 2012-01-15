@@ -44,10 +44,6 @@ a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  color: #FFFFFF;
-}
-
 /* Sections */
 header {;
   background: #D9D9D9;
@@ -58,10 +54,6 @@ header {;
 header img {
 
 }
-
-.content {
-  width: 920px;
-  padding: 0 20px 80px 20px;}
 
 /* Navigation */
 
@@ -111,4 +103,9 @@ nav ul li{
 #footer_nav ul li {
   list-style-type: none;
   display: inline-block;
+}
+
+.content {
+  width: 920px;
+  padding: 25px;
 }
