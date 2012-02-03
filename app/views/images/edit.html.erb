@@ -1,1 +1,15 @@
 <h1>Edit image</h1>
+
+<%= form_for(@image) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+
+<%= link_to "delete", @image, :method => :delete, :confirm => "Are you sure?",
+                              :title => "Delete #{@image}" %>
+<% end %>

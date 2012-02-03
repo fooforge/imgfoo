@@ -1,1 +1,10 @@
+<% if @default_image.nil? %>
+<h1>No content</h1>
+<p>There's no content yet. Start uploading some images right here!</p>
+<% elsif @rnd_image.nil? %>
+<h1><%= @default_image.title %></h1>
+<p><%= image_tag @default_image.attachment(:large) %></p>
+<% else %>
 <%= link_to large_random_image, @rnd_image %>
+<%= @rnd_image.inspect %>
+<% end %>

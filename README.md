@@ -34,6 +34,9 @@ Participation is welcome. Simply fork it on Github and send me a pull request.
         * Tags
     * Some fuzzy logic to order/alter images automatically by EXIF data
     * Multi-user capable to create collaborative galleries
+* Equipment presentation
+    * Cameras/Lenses
+    * Accessoires
 
 # Requirements<a id="requirements" />
 

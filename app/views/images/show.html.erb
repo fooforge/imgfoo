@@ -1,6 +1,10 @@
-<% if @image.photo.exists? then %>
-The title: <%= @image.title %><br />
-Large: <%= link_to(image_tag(@image.photo.url(:large)), @image.photo.url, :class => "top_up") unless @image.photo.nil? %><br />
-Medium: <%= image_tag @image.photo.url(:medium) %><br />
-Thumb: <%= image_tag @image.photo.url(:thumb) %>
+<% if @image.attachment.exists? %>
+<h1><%= @image.title %><br /><h1>
+<h2>Large:</h2>
+<%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %><br />
+<h3>Medium:</h3>
+<%= image_tag @image.attachment.url(:medium) %>
+<h4>Thumb:</h4>
+<%= image_tag @image.attachment.url(:thumb) %>
+<%= link_to "edit", :action => "edit", :id => @image %>
 <% end %>

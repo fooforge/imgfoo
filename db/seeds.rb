@@ -12,3 +12,9 @@ user = User.create!(:name => "admin",
             :password_confirmation => "foobar",
             :admin => true)
 user.toggle!(:admin)
+
+image = Image.new
+image.attachment = File.open('public/images/default.jpg')
+image.title = 'Default image'
+image.user_id = user.id
+image.save!
