@@ -1,5 +1,12 @@
 <% if @image.attachment.exists? %>
 <h1><%= @image.title %><br /><h1>
+
+<h1>EXIF data</h1>
+<% @exif = get_exif_data %>
+<% @exif.each do |data| %>
+<%= data %><br />
+<% end %>
+
 <h2>Large:</h2>
 <%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %><br />
 <h3>Medium:</h3>
