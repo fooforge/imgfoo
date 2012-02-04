@@ -8,11 +8,6 @@ class ImagesController < ApplicationController
   
   def show
     @image = Image.find(params[:id])
-
-    respond_to do |format|
-      format.js { render :action=>:application }
-      format.html
-    end
   end
   
   def new
