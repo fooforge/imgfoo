@@ -8,6 +8,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'paperclip'
 gem 'mini_exiftool'
 gem 'delayed_job_active_record'
+gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

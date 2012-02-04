@@ -1,6 +1,7 @@
 <% if @image.attachment.exists? %>
 <h1><%= @image.title %><br /></h1>
 
+<div id="exif_data">
 Model: <%= @image.model %><br />
 Focal length: <%= @image.focal_length %><br />
 Shutter speed: <%= @image.shutter_speed %><br />
@@ -12,6 +13,7 @@ Date: <%= @image.date_time_original %><br />
 GPS Altitude: <%= @image.gps_altitude %><br />
 GPS Latitude: <%= @image.gps_latitude %><br />
 GPS Longitude: <%= @image.gps_longitude %><br />
+</div>
 
 <h2>Large:</h2>
 <%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %><br />
