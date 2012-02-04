@@ -7,6 +7,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
 gem 'paperclip'
 gem 'mini_exiftool'
+gem 'delayed_job_active_record'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

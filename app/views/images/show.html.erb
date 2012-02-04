@@ -1,11 +1,17 @@
 <% if @image.attachment.exists? %>
-<h1><%= @image.title %><br /><h1>
+<h1><%= @image.title %><br /></h1>
 
-<h1>EXIF data</h1>
-<% @exif = get_exif_data %>
-<% @exif.each do |data| %>
-<%= data %><br />
-<% end %>
+Model: <%= @image.model %><br />
+Focal length: <%= @image.focal_length %><br />
+Shutter speed: <%= @image.shutter_speed %><br />
+Aperture: <%= @image.aperture %><br />
+ISO: <%= @image.iso %><br />
+White balance: <%= @image.white_balance %><br />
+Flash: <%= @image.flash %><br />
+Date: <%= @image.date_time_original %><br />
+GPS Altitude: <%= @image.gps_altitude %><br />
+GPS Latitude: <%= @image.gps_latitude %><br />
+GPS Longitude: <%= @image.gps_longitude %><br />
 
 <h2>Large:</h2>
 <%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %><br />

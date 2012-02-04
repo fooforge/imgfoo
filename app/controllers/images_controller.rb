@@ -17,8 +17,10 @@ class ImagesController < ApplicationController
 
   def create
     @image = current_user.images.build(params[:image])
+
     if @image.save!
       flash[:success] = "Image upload succeeded."
+      Image.set_exif_data @image
     else
       logger.debug "#{@image.error.inspect}"
     end
@@ -49,6 +51,10 @@ class ImagesController < ApplicationController
   end
 
   private
+    def get_exif_data
+      MiniExifTool.command = '-common'
+      @exif_data = MiniExifTool.new @image.attachment.path
+    end  
 
     def authorized_user
       @image = current_user.images.find_by_id(params[:id])

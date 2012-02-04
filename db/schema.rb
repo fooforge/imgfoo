@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120109205002) do
+ActiveRecord::Schema.define(:version => 20120204021902) do
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -22,6 +38,18 @@ ActiveRecord::Schema.define(:version => 20120109205002) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.string   "model"
+    t.string   "date_time_original"
+    t.string   "image_size"
+    t.float    "focal_length"
+    t.float    "shutter_speed"
+    t.float    "aperture"
+    t.integer  "iso"
+    t.string   "white_balance"
+    t.string   "flash"
+    t.string   "gps_altitude"
+    t.string   "gps_latitude"
+    t.string   "gps_longitude"
   end
 
   add_index "images", ["user_id", "created_at"], :name => "index_images_on_user_id_and_created_at"
