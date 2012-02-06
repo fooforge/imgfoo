@@ -42,6 +42,7 @@ Participation is welcome. Simply fork it on Github and send me a pull request.
 
 * Ruby 1.9
 * Bundler
+* perl-Image-ExifTool
 
 # Setup<a id="setup" />
 

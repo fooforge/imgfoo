@@ -17,11 +17,11 @@ class Image < ActiveRecord::Base
   attr_accessible :title, :attachment, :aperture, :model, :date_time_original, :image_size, :focal_length, :shutter_speed, :iso, :white_balance, :flash, :gps_altitude, :gps_latitude, :gps_longitude
 
   belongs_to :user
-  
+
   has_attached_file :attachment, :styles => { :large  => "900x900>",
                                               :medium => "500x500>",
                                               :thumb  => "100x100>" }
-  
+
   validates_attachment_presence     :attachment
   validates_attachment_size         :attachment, :less_than => 16.megabyte
   validates_attachment_content_type :attachment, :content_type => ['image/jpeg', 'image/png', 'image/gif'], :message => "Please provide either jpeg, gif or png content!"
@@ -47,7 +47,7 @@ class Image < ActiveRecord::Base
                                :gps_latitude => @exif_data.gps_latitude)
     end
     handle_asynchronously :set_exif_data
-  
+
     def random
       find(:first, :offset => rand(all.size-1))
     end
