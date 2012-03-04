@@ -3,22 +3,35 @@
   <head>
     <title><%= title %></title>
     <%= render 'layouts/stylesheets' %>
-    <%= javascript_include_tag 'top_up.js', :defaults %>
+    <%= javascript_include_tag 'top_up.js', :defaults %>  
+    <%= javascript_include_tag 'bootstrap-carousel.js' %>
     <%= csrf_meta_tag %>
+
+    <script type="text/javascript">
+      $('.myCarousel').carousel({
+      interval: 2000
+    })
+    </script>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
       <%= render 'layouts/header' %>
     </div>
-    <div class="container round">
-      <div class="content last">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-      <%= yield %>
+    <% if signed_in? %>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span2">
+            <%= render 'layouts/sidebar' %>
+          </div>
+        <div class="span10">
+          <%= yield %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>    
     <!--<%= debug(params) if Rails.env.development? %>-->
-    </div>
   </body>
 </html>
