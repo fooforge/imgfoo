@@ -1,22 +1,19 @@
-<div class="navbar-inner">
-  <div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </a>
-    <a class="brand" href="#"><%= @application_title %></a>
-    <div class="nav-collapse">
-      <ul class="nav">
-        <li class="active"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
-      </ul>
-      <% unless signed_in? %>
-      <p class="navbar-text pull-right"><%= link_to "Sign in", signin_path %></p>
-      <% else %>
-        <p class="navbar-text pull-right">Logged in as <%= link_to "#{current_user.name}", current_user %> | <%= link_to "Sign out", signout_path %></p>
-      <% end %>
-    </div><!--/.nav-collapse -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#"><%= Imgfoo %></a>
+        <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+        <% unless signed_in? %>
+        <p class="navbar-text pull-right"><%= link_to "Sign in", signin_path %></p>
+        <% else %>
+          <p class="navbar-text pull-right">Logged in as <%= link_to "#{current_user.name}", current_user %> | <%= link_to "Sign out", signout_path %></p>
+        <% end %>
+      </div><!--/.nav-collapse -->
+    </div>
   </div>
 </div>

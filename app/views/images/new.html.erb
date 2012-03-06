@@ -1,16 +1,9 @@
-<h1>Upload image</h1>
-
-<%= form_for(@image, :html => { :multipart => true }) do |f| %>
+<%= simple_form_for(@image, :html => { :multipart => true }) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :attachment %><br />
-    <%= f.file_field :attachment %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Upload" %>
-  </div>
+  <fieldset>
+    <legend>Upload image</legend>
+      <%= f.input :title, :hint => 'Please provide a title!' %>
+      <%= f.input :attachment, :hint => 'Choose a file' %>
+      <%= f.button :wrapped, :cancel => root_path %>
+  </fieldset>
 <% end %>
