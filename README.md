@@ -6,6 +6,10 @@ own. This is imgfoo.
 
 Participation is welcome. Simply fork it on Github and send me a pull request.
 
+Please note:
+At the moment imgfoo is just a huge playground to get warm with RoR and a
+couple of gems.
+
 # Index
 * [Planned features](#features)
 * [Requirements](#requirements)
@@ -42,6 +46,7 @@ Participation is welcome. Simply fork it on Github and send me a pull request.
 
 * Ruby 1.9
 * Bundler
+* libimage-exiftool-perl|perl-Image-ExifTool
 
 # Setup<a id="setup" />
 
