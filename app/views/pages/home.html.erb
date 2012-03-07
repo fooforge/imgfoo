@@ -1,11 +1,17 @@
-<% if @rnd_image.nil? %>
-<h1><%= @default_image.title %></h1>
-<p><%= image_tag @default_image.attachment(:large) %></p>
-<% if @default_image.nil? %>
-<h1>No content</h1>
-<p>There's no content yet. Start uploading some images right here!</p>
-<% end %>
-<% else %>
-<%= link_to large_random_image, @rnd_image %>
-<%= @rnd_image.inspect %>
-<% end %>
+<div id="myCarousel" class="carousel">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <%= image_tag @default_image.attachment(:large) %>
+    </div>
+    <div class="item">
+      <%= image_tag @default_image.attachment(:large) %>
+    </div>
+    <div class="item">
+      <%= image_tag @default_image.attachment(:large) %>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>

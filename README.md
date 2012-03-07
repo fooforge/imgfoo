@@ -46,7 +46,11 @@ couple of gems.
 
 * Ruby 1.9
 * Bundler
+<<<<<<< HEAD
 * libimage-exiftool-perl|perl-Image-ExifTool
+=======
+* perl-Image-ExifTool
+>>>>>>> interface-rework
 
 # Setup<a id="setup" />
 

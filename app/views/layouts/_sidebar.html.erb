@@ -1,0 +1,52 @@
+<% if signed_in? %>
+<ul class="nav nav-list">
+  <li class="nav-header">
+    Core
+  </li>
+  <li class="active">
+    <%= link_to root_path do %>
+      <i class="icon-home"></i>
+      Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to about_path do %>
+      <i class="icon-road"></i>
+      About
+    <% end %>
+  </li>
+  <li>
+    <%= link_to contact_path do %>
+      <i class="icon-envelope"></i>
+      Contact
+    <% end %>
+  </li>
+  <li class="nav-header">
+    User content
+  </li>
+  <li>
+    <%= link_to new_image_path do %>
+      <i class="icon-picture"></i>
+      New content
+    <% end %>
+  </li>
+  <li>
+    <%= link_to root_path do %>
+      <i class="icon-list"></i>
+      All images
+    <% end %>
+  </li>
+  <li>
+    <%= link_to current_user do %>
+      <i class="icon-user"></i>
+      Profile
+    <% end %>
+  </li>
+  <li>
+    <%= link_to edit_user_path(current_user) do %>
+      <i class="icon-list-alt"></i>
+      Edit settings
+    <% end %>
+  </li>
+</ul>
+<% end %>

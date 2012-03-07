@@ -3,24 +3,26 @@
   <head>
     <title><%= title %></title>
     <%= render 'layouts/stylesheets' %>
-    <%= javascript_include_tag 'top_up.js', :defaults %>
+    <%= javascript_include_tag 'top_up.js', :defaults %>  
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= render 'layouts/user_navigation' %>
-    <%= render 'layouts/footer.html.erb' %>
-    <div class="container round">
-      <div class="header">
-        <%= render 'layouts/header' %>
+    <%= render 'layouts/header' %>
+    <% if signed_in? %>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span2">
+            <%= render 'layouts/sidebar' %>
+          </div>
+        <div class="span10">
+          <%= yield %>
+        </div>
       </div>
-      <div class="content last">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-      <%= yield %>
+    <% else %>
+      <div class="container">
+        <%= yield %>
       </div>
-    </div>
+    <% end %>    
     <!--<%= debug(params) if Rails.env.development? %>-->
-    </div>
   </body>
 </html>

@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'mini_exiftool'
 gem 'delayed_job_active_record'
 gem 'jquery-rails'
+gem 'simple_form'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

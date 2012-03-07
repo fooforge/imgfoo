@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     @default_image = Image.first
-    @rnd_image = Image.random
+    #@rnd_image = Image.random
   end
 
   def contact
