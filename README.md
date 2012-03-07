@@ -16,7 +16,7 @@ couple of gems.
 * [Setup](#setup)
 * [Thanks to](#thanks)
 
-# Planned features<a id="features" />
+# Planned features
 
 * Image presentation
     * Configurable JS Lightbox
@@ -42,23 +42,20 @@ couple of gems.
     * Cameras/Lenses
     * Accessoires
 
-# Requirements<a id="requirements" />
+# Requirements
 
 * Ruby 1.9
 * Bundler
-<<<<<<< HEAD
 * libimage-exiftool-perl|perl-Image-ExifTool
-=======
 * perl-Image-ExifTool
->>>>>>> interface-rework
 
-# Setup<a id="setup" />
+# Setup
 
 * git clone #{repo}
 * cd #{repo}
 * bundle install
 
-# Thanks to<a id="thanks" />
+# Thanks to
 
 * [The Rails Tutorial](http://ruby.railstutorial.org) (you simply rock!)
 * [Albumdy](https://github.com/rapind/albumdy) for a couple of ideas
