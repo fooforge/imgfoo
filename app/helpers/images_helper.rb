@@ -1,7 +1,7 @@
 module ImagesHelper
 
-  def large_random_image
+  def medium_random_image
     @rnd_image = Image.random
-    image_tag(@rnd_image.attachment.url(:large))
+    image_tag(@rnd_image.attachment.url(:medium))
   end
 end

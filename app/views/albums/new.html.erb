@@ -1,7 +1,11 @@
+<div class="page-header">
+  <h1>Create album</h1>
+</div>
+
 <%= simple_form_for(@album, :html => { :multipart => true }) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <fieldset>
-    <legend>Create album</legend>
+    <legend>Main options</legend>
       <%= f.input :title, :hint => 'Please provide a title!' %>
       <%= f.button :wrapped, :cancel => root_path %>
   </fieldset>

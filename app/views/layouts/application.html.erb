@@ -12,7 +12,6 @@
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span2">
-
             <%= render 'layouts/sidebar' %>
           </div>
         <div class="span10">
@@ -27,6 +26,6 @@
         <%= yield %>
       </div>
     <% end %>    
-    <!--<%= debug(params) if Rails.env.development? %>-->
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

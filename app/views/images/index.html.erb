@@ -2,14 +2,18 @@
 
 <% @images.each do |image| %>
 <%= link_to image_tag(image.attachment.url(:thumb)), image %>
-<%= link_to "delete", image, :method => :delete, :confirm => "Are you sure?",
-                              :title => "Delete #{image}" %>
+<% if signed_in? %>
+  <%= link_to "delete", image, :method => :delete, :confirm => "Are you sure?",
+                               :title => "Delete #{image}" %>
+  <% end %>
 <% end %>
 
 <h1>Images with Top Up</h1>
 
 <% @images.each do |image| %>
 <%= link_to image_tag(image.attachment.url(:thumb)), image.attachment.url, :class => "top_up" %>
-<%= link_to "delete", image, :method => :delete, :confirm => "Are you sure?",
-                              :title => "Delete #{image}" %>
+<% if signed_in? %>
+  <%= link_to "delete", image, :method => :delete, :confirm => "Are you sure?",
+                               :title => "Delete #{image}" %>
+  <% end %>
 <% end %>

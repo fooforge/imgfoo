@@ -3,6 +3,14 @@
     <h1>Hello world!</h1>
     <p>I've restarted in photography and tried out various Open Source image galleries, but I wasn't really confident with any of them. So I had to write my own.</p>
     <p>This is imgfoo.</p>
+
+    <ul class="thumbnails">
+      <li>
+        <a href="#" class="thumbnail">
+          <%= medium_random_image %>
+        </a>
+      </li>
+    </ul>
   </div>
 <% else %>
 <div class="row">
@@ -11,7 +19,7 @@
       <h1>Welcome back <%= @user.name %>!</h1>
     </div>
     <div class="well">
-      <p>So, what's the plan for today!</p>
+      <p>So, what's the plan for today?!</p>
       <p><%= link_to "Upload content!", new_image_path, :class => "btn btn-large btn-info" %> or ...</p>
     </div>
   </div>
@@ -21,7 +29,7 @@
       <ul class="thumbnails">
         <li >
           <a href="#" class="thumbnail">
-            <img src="http://placehold.it/140x180" alt="">
+            <img src="http://placehold.it/180x140" alt="">
           </a>
         </li>
       </ul>

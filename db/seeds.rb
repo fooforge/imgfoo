@@ -13,8 +13,20 @@ user = User.create!(:name => "admin",
             :admin => true)
 user.toggle!(:admin)
 
-image = Image.new
-image.attachment = File.open('public/images/default.jpg')
-image.title = 'Default image'
-image.user_id = user.id
-image.save!
+5.times do |count|
+  album = Album.new
+  album.title = "Default album #{count+1}"
+  album.user_id = user.id
+  album.save!
+end
+
+20.times do |count|
+  album = Album.new
+  album.id = 1 + rand(5)
+
+  image = Image.new
+  image.attachment = File.open("public/images/test_image_0#{1+rand(6)}.jpg")
+  image.title = "Default image #{count+1}"
+  image.album_id = album.id
+  image.save!
+end

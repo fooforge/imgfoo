@@ -4,6 +4,7 @@
     <legend>Upload image</legend>
       <%= f.input :title, :hint => 'Please provide a title!' %>
       <%= f.input :attachment, :hint => 'Choose a file' %>
+      <%= f.association :album %>
       <%= f.button :wrapped, :cancel => root_path %>
   </fieldset>
 <% end %>

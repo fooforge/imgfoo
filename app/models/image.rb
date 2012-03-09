@@ -32,7 +32,7 @@ class Image < ActiveRecord::Base
 
   has_attached_file :attachment, :styles => { :large  => "900x900>",
                                               :medium => "500x500>",
-                                              :thumb  => "100x100>" }
+                                              :thumb  => "180x140>" }
 
   validates_attachment_presence     :attachment
   validates_attachment_size         :attachment, :less_than => 16.megabyte

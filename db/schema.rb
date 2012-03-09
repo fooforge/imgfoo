@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309153233) do
+ActiveRecord::Schema.define(:version => 20120309210212) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.integer  "image_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20120309153233) do
 
   create_table "images", :force => true do |t|
     t.string   "title"
-    t.integer  "user_id"
+    t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "attachment_file_name"
@@ -60,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120309153233) do
     t.string   "gps_longitude"
   end
 
-  add_index "images", ["user_id", "created_at"], :name => "index_images_on_user_id_and_created_at"
+  add_index "images", ["album_id", "created_at"], :name => "index_images_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

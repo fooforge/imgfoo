@@ -15,7 +15,8 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = current_user.images.build(params[:image])
+    @album = current_user.albums.find(params[:image][:album_id])
+    @image = @album.images.build(params[:image])
 
     if @image.save!
       flash[:success] = "Image upload succeeded."

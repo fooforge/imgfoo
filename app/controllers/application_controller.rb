@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 
+  # Comment those out if ActiveRecord debugging is needed
   rescue_from ActiveRecord::RecordInvalid, 
               ActiveRecord::RecordNotFound,
               ActionController::RoutingError,
