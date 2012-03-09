@@ -1,0 +1,11 @@
+<%= simple_form_for(@album) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <fieldset>
+    <legend>Edit album</legend>
+      <%= f.input :title, :hint => 'Please provide a new title!' %>
+      <%= f.button :wrapped, :cancel => root_path %>
+  </fieldset>
+<% end %>
+
+<%= link_to "delete", @album, :method => :delete, :confirm => "Are you sure?",
+                              :title => "Delete #{@album}" %>

@@ -11,12 +11,24 @@
 #  attachment_content_type :string(255)
 #  attachment_file_size    :integer
 #  attachment_updated_at   :datetime
+#  model                   :string(255)
+#  date_time_original      :string(255)
+#  image_size              :string(255)
+#  focal_length            :float
+#  shutter_speed           :float
+#  aperture                :float
+#  iso                     :integer
+#  white_balance           :string(255)
+#  flash                   :string(255)
+#  gps_altitude            :string(255)
+#  gps_latitude            :string(255)
+#  gps_longitude           :string(255)
 #
 
 class Image < ActiveRecord::Base
   attr_accessible :title, :attachment, :aperture, :model, :date_time_original, :image_size, :focal_length, :shutter_speed, :iso, :white_balance, :flash, :gps_altitude, :gps_latitude, :gps_longitude
 
-  belongs_to :user
+  belongs_to :album
 
   has_attached_file :attachment, :styles => { :large  => "900x900>",
                                               :medium => "500x500>",

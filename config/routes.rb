@@ -1,5 +1,6 @@
 Imgfoo::Application.routes.draw do
   resources :users
+  resources :albums
   resources :images
   resources :sessions, :only => [:new, :create, :destroy]
 

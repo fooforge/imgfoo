@@ -1,17 +1,31 @@
-<div id="myCarousel" class="carousel">
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-      <%= image_tag @default_image.attachment(:large) %>
+<% unless signed_in? %>
+<div class="hero-unit">
+    <h1>Hello world!</h1>
+    <p>I've restarted in photography and tried out various Open Source image galleries, but I wasn't really confident with any of them. So I had to write my own.</p>
+    <p>This is imgfoo.</p>
+  </div>
+<% else %>
+<div class="row">
+  <div class="span6">
+    <div class="page-header">
+      <h1>Welcome back <%= @user.name %>!</h1>
     </div>
-    <div class="item">
-      <%= image_tag @default_image.attachment(:large) %>
-    </div>
-    <div class="item">
-      <%= image_tag @default_image.attachment(:large) %>
+    <div class="well">
+      <p>So, what's the plan for today!</p>
+      <p><%= link_to "Upload content!", new_image_path, :class => "btn btn-large btn-info" %> or ...</p>
     </div>
   </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  <div class="span4">
+    <% ['Latest upload','Most visited','Most commented'].each do |snippet| %>
+      <h3><%= snippet %></h3>
+      <ul class="thumbnails">
+        <li >
+          <a href="#" class="thumbnail">
+            <img src="http://placehold.it/140x180" alt="">
+          </a>
+        </li>
+      </ul>
+    <% end %>
+  </div>
 </div>
+<% end %>
