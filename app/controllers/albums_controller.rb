@@ -9,6 +9,10 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @images = @album.images
+
+    # Expose first image and remove it from the @images array
+    @exposed_image = @images.first
+    @images.shift
   end
 
   def new

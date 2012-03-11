@@ -2,10 +2,22 @@
   <h1><%= @album.title %></h1>
 </div>
 
-<ul class="thumbnails">
-<% @images.each do |image| %>
-  <li>
-    <%= link_to image_tag(image.attachment.url(:thumb)), image, :class => "thumbnail" %>
-  </li>
-<% end %>
-</ul>
+<div class="span8">
+  <ul class="thumbnails">
+    <li class="span6">
+      <div class="thumbnail">
+        <%= link_to image_tag(@exposed_image.attachment.url(:medium)), @exposed_image, :class => "thumbnail" %>
+        <h5><%= @exposed_image.title %></h5>
+        <p>Here comes the description!</p>
+      </div>
+    </li>
+    <% @images.each do |image| %>
+    <li class="span2">
+      <div class="thumbnail">
+        <%= link_to image_tag(image.attachment.url(:thumb)), image, :class => "thumbnail" %>
+        <h5><%= image.title %></h5>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>

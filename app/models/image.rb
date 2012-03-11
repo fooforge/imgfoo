@@ -26,7 +26,7 @@
 #
 
 class Image < ActiveRecord::Base
-  attr_accessible :title, :attachment, :aperture, :model, :date_time_original, :image_size, :focal_length, :shutter_speed, :iso, :white_balance, :flash, :gps_altitude, :gps_latitude, :gps_longitude
+  attr_accessible :title, :album_id, :attachment, :aperture, :model, :date_time_original, :image_size, :focal_length, :shutter_speed, :iso, :white_balance, :flash, :gps_altitude, :gps_latitude, :gps_longitude
 
   belongs_to :album
 
