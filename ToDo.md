@@ -1,5 +1,9 @@
 # ToDos
 
+* Remove Bugs
+   * 404 after uploading an image file
+   * "no method error" (undefined method `attachment' for nil:NilClass) in "Albums#Show" after creating a new album
+
 * Backend
     * Complete image uploading
         * Show image(s)
