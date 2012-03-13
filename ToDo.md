@@ -1,8 +1,7 @@
 # ToDos
 
-## Bugs
-
-* 404 after uploading an image file
+* Remove Bugs
+   * 404 after uploading an image file
 
 * Backend
     * Complete image uploading
