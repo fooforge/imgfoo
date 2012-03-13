@@ -38,6 +38,11 @@ class Image < ActiveRecord::Base
   validates_attachment_size         :attachment, :less_than => 16.megabyte
   validates_attachment_content_type :attachment, :content_type => ['image/jpeg', 'image/png', 'image/gif'], :message => "Please provide either jpeg, gif or png content!"
 
+
+  def has_gps?
+    (gps_longitude && gps_latitude) ? true : false
+  end
+
   class << self
     def set_exif_data(image)
       @image = image
@@ -63,5 +68,6 @@ class Image < ActiveRecord::Base
     def random
       find(:first, :offset => rand(all.size-1))
     end
+
   end
 end
