@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
     @images = @album.images
 
     # Expose first image and remove it from the @images array
-    @exposed_image = @images.first
+    @exposed_image = @images.first || nil
     @images.shift
   end
 

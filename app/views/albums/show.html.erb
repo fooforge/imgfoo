@@ -4,6 +4,7 @@
 
 <div class="span8">
   <ul class="thumbnails">
+    <% if @exposed_image %>
     <li class="span6">
       <div class="thumbnail">
         <%= link_to image_tag(@exposed_image.attachment.url(:medium)), @exposed_image, :class => "thumbnail" %>
@@ -11,6 +12,7 @@
         <p>Here comes the description!</p>
       </div>
     </li>
+    <% end %>
     <% @images.each do |image| %>
     <li class="span2">
       <div class="thumbnail">
