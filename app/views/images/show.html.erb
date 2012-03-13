@@ -1,3 +1,38 @@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC0KIgBiozX-3YWjI729nE7GPFYaRZ9Tao&sensor=false">
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var pinColor = "FE7569";
+
+  var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+    new google.maps.Size(21, 34),
+    new google.maps.Point(0,0),
+    new google.maps.Point(10, 34));
+
+  var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+    new google.maps.Size(40, 37),
+    new google.maps.Point(0, 0),
+    new google.maps.Point(12, 35));
+
+  var myOptions = {
+    center: new google.maps.LatLng('<%= @image.gps_latitude.gsub(/\s+.*/,'') %>', '<%= @image.gps_longitude.gsub(/\s+.*/,'') %>'),
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng('<%= @image.gps_latitude.gsub(/\s+.*/,'') %>', '<%= @image.gps_longitude.gsub(/\s+.*/,'') %>'),
+    icon: pinImage,
+    shadow: pinShadow
+  });
+});
+</script>
+
+
 <div class="page-header">
   <h1><%= @image.title %><br /></h1>
 </div>
@@ -8,6 +43,7 @@
     <li class="active"><a href="#1" data-toggle="tab">Image</a></li>
     <li><a href="#2" data-toggle="tab">EXIF Data</a></li>
     <li><a href="#3" data-toggle="tab">Other sizes</a></li>
+    <li><a href="#4" data-toggle="tab">Map</a></li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="1">
@@ -70,7 +106,10 @@
       <%= image_tag @image.attachment.url(:medium) %>
       <h4>Thumb:</h4>
       <%= image_tag @image.attachment.url(:thumb) %>
-  </div>
+    </div>
+    <div class="tab-pane" id="4">
+      <div id="map_canvas" class="googlemaps"></div>
+    </div>
 </div>
 
 <script>
