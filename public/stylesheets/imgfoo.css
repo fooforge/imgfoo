@@ -6,3 +6,9 @@ th.left-header {
     width: 150px;
     text-align:left;
 }
+
+.googlemaps {
+    width: 600px;
+    height: 600px;
+    border: 1px solid #242424;
+}
