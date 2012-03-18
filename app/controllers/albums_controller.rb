@@ -12,7 +12,6 @@ class AlbumsController < ApplicationController
 
     # Expose first image and remove it from the @images array
     @exposed_image = @images.first || nil
-    @images.shift
   end
 
   def new
@@ -32,7 +31,7 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if @album.update_attributes(params[:id])
+    if @album.update_attributes(params[:album])
       flash[:success] = "Album properties successfully updated."
       redirect_to @album
     else
@@ -44,7 +43,7 @@ class AlbumsController < ApplicationController
   def destroy
     Album.find(params[:id]).destroy
     flash[:success] = "Album vanished."
-    redirect_to root_path
+    redirect_to albums_path
   end
 
   private

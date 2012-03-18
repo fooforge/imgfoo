@@ -1,8 +1,13 @@
+<div class="page-header">
+  <h1>Edit album</h1>
+</div>
+
 <%= simple_form_for(@album) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <fieldset>
     <legend>Edit album</legend>
       <%= f.input :title, :hint => 'Please provide a new title!' %>
+      <%= f.input :description, :hint => 'Please provide a new description (128 characters max)!' %>
       <%= f.button :wrapped, :cancel => root_path %>
   </fieldset>
 <% end %>

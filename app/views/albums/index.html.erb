@@ -15,6 +15,10 @@
         <% if album.description %>
           <p><%= album.description %></p>
         <% end %>
+        <% if signed_in? %>
+          <%= link_to "Edit", edit_album_path(album), :title => "Edit \"#{album.title}\"" %> |
+          <%= link_to "Delete", album, :method => :delete, :confirm => "Are you sure?", :title => "Delete \"#{album.title}\"" %>
+        <% end %>
       </div>
     </li>
   <% end %>
