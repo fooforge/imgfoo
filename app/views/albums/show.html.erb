@@ -3,6 +3,11 @@
 </div>
 
 <div class="span8">
+  <% if @album.description %>
+    <span class="label">Description:</span>
+    <p><%= @album.description %></p>
+  <% end %>
+
   <ul class="thumbnails">
     <% if @exposed_image %>
     <li class="span6">

@@ -20,7 +20,7 @@ user.toggle!(:admin)
   album.save!
 end
 
-10.times do |count|
+25.times do |count|
   album = Album.new
   album.id = 1 + rand(5)
 
