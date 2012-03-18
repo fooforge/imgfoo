@@ -31,6 +31,7 @@ couple of gems.
         * Flattr
         * Flickr
         * Twitter
+        * Instagram
     * Static pages
         * e.g. for short description of the photographer
     * Image management via
