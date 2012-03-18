@@ -1,0 +1,17 @@
+<li class="span2">
+  <div class="thumbnail">
+    <% unless album.images.first %>
+      <%= link_to image_tag("http://placehold.it/180x140"), album, :class => "thumbnail" %>
+    <% else %>
+      <%= link_to image_tag(album.images.first.attachment.url(:thumb)), album, :class => "thumbnail" %>
+    <% end %>
+    <h5><%= album.title %></h5>
+    <% if album.description %>
+      <p><%= album.description %></p>
+    <% end %>
+    <% if signed_in? %>
+      <%= link_to "Edit", edit_album_path(album), :title => "Edit \"#{album.title}\"" %> |
+      <%= link_to "Delete", album, :method => :delete, :confirm => "Are you sure?", :title => "Delete \"#{album.title}\"" %>
+    <% end %>
+  </div>
+</li>

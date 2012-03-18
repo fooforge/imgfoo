@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   before_filter :authorized_user, :only => [:edit, :update]
 
   def index
-    @albums = Album.all
+    @albums = Album.paginate(:page => params[:page], :per_page => 2)
   end
 
   def show

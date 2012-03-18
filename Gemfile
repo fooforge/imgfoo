@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.11'
-gem 'sqlite3', '1.3.3'
-gem 'builder', '2.1.2'
-gem 'gravatar_image_tag', '1.0.0.pre2'
-gem 'will_paginate', '3.0.pre2'
+gem 'rails'
+gem 'sqlite3'
+gem 'builder'
+gem 'gravatar_image_tag'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'mini_exiftool'
 gem 'delayed_job_active_record'
@@ -13,15 +14,15 @@ gem 'simple_form'
 gem 'rails_config'
 
 group :development do
-  gem 'rspec-rails', '2.6.1'
-  gem 'annotate', '2.4.0'
-  gem 'faker', '0.3.1'
+  gem 'rspec-rails'
+  gem 'annotate'
+  gem 'faker'
 end
 
 group :test do
-  gem 'rspec-rails', '2.6.1'
-  gem 'webrat', '0.7.1'
-  gem 'factory_girl_rails', '1.0'
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'factory_girl_rails'
 end
 
 # Bundle edge Rails instead:
