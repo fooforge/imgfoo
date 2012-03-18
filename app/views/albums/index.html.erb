@@ -6,9 +6,15 @@
   <% @albums.each do |album| %>
     <li class="span2">
       <div class="thumbnail">
-        <%= link_to image_tag("http://placehold.it/180x140"), album, :class => "thumbnail" %>
+        <% unless album.images.first %>
+          <%= link_to image_tag("http://placehold.it/180x140"), album, :class => "thumbnail" %>
+        <% else %>
+          <%= link_to image_tag(album.images.first.attachment.url(:thumb)), album, :class => "thumbnail" %>
+        <% end %>
         <h5><%= album.title %></h5>
-        <p>Here comes the description!</p>
+        <% if album.description %>
+          <p><%= album.description %></p>
+        <% end %>
       </div>
     </li>
   <% end %>

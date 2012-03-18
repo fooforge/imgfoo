@@ -10,7 +10,7 @@
 #
 
 class Album < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :title, :description
 
   belongs_to :user
   has_many :images  

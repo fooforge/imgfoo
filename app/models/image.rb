@@ -46,8 +46,9 @@ class Image < ActiveRecord::Base
   class << self
     def set_exif_data(image)
       @image = image
-      # MiniExiftool.command=('exiftool -common')
       @exif_data = MiniExiftool.new @image.attachment.path
+
+      # Enable numerical for various data types (e.g. GPS Latitude/Longitude, exposure, etc.)
       @exif_data.numerical = true
       @exif_data.reload
 
@@ -65,11 +66,9 @@ class Image < ActiveRecord::Base
                                :gps_longitude => @exif_data.gps_longitude,
                                :gps_latitude => @exif_data.gps_latitude)
     end
-    handle_asynchronously :set_exif_data
 
     def random
       find(:first, :offset => rand(all.size-1))
     end
-
   end
 end

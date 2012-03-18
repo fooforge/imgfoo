@@ -2,11 +2,12 @@
   <h1>Create album</h1>
 </div>
 
-<%= simple_form_for(@album, :html => { :multipart => true }) do |f| %>
+<%= simple_form_for(@album) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <fieldset>
     <legend>Main options</legend>
       <%= f.input :title, :hint => 'Please provide a title!' %>
+      <%= f.input :description, :hint => 'You may add a description (128 characters max)!' %>
       <%= f.button :wrapped, :cancel => root_path %>
   </fieldset>
 <% end %>
