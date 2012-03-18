@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_CFG['api_key'] %>&sensor=false">
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<%= @gmaps_api_key %>&sensor=false">
 </script>
 
 <script type="text/javascript">
@@ -16,7 +16,7 @@
       new google.maps.Point(12, 35));
 
     var myOptions = {
-      center: new google.maps.LatLng('<%= @image.gps_latitude.gsub(/\s+.*/,'') %>', '<%= @image.gps_longitude.gsub(/\s+.*/,'') %>'),
+      center: new google.maps.LatLng('<%= @image.gps_latitude %>', '<%= @image.gps_longitude %>'),
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -25,7 +25,7 @@
 
     var marker = new google.maps.Marker({
       map: map,
-      position: new google.maps.LatLng('<%= @image.gps_latitude.gsub(/\s+.*/,'') %>', '<%= @image.gps_longitude.gsub(/\s+.*/,'') %>'),
+      position: new google.maps.LatLng('<%= @image.gps_latitude %>', '<%= @image.gps_longitude %>'),
       icon: pinImage,
       shadow: pinShadow
     });

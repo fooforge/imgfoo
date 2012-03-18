@@ -6,7 +6,9 @@
 <div class="tabbable">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#1" data-toggle="tab">Image</a></li>
-    <li><a href="#2" data-toggle="tab">EXIF Data</a></li>
+    <% if @image.attachment.content_type == 'image/jpeg' %>
+      <li><a href="#2" data-toggle="tab">EXIF Data</a></li>
+    <% end %>
     <li><a href="#3" data-toggle="tab">Other sizes</a></li>
     <% if @image.has_gps? %>
       <li><a href="#4" data-toggle="tab">Map</a></li>
@@ -15,59 +17,16 @@
   <div class="tab-content">
     <div class="tab-pane active" id="1">
       <h2>Large:</h2>
-      <%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %><br />
+      <%= link_to(image_tag(@image.attachment.url(:large)), @image.attachment.url, :class => "top_up") unless @image.attachment.nil? %>
       <%= link_to "edit", :action => "edit", :id => @image %>
     </div>
-    <div class="tab-pane" id="2">
-      <div id="exif_data">
-        <table style="width:500px" class="table-striped">
-          <tr>
-            <th class="left-header">Model:</th>
-            <td><%= link_to @image.model, '#', :title => "Show all images taken with #{@image.model}" %></td>
-          </tr>
-          <tr>
-            <th class="left-header">Focal length:</th>
-            <td><%= @image.focal_length %></td>
-          </tr>
-          <tr>
-            <th class="left-header">Shutter speed:</th>
-            <td><%= @image.shutter_speed %></td>
-          </tr>
-          <tr>
-            <th class="left-header">Aperture:</th>
-            <td><%= @image.aperture %></td>
-          </tr>
-          <tr>
-            <th class="left-header">ISO:</th>
-            <td><%= @image.iso %></td>
-          </tr>
-          <tr>
-            <th class="left-header">White balance:</th>
-            <td><%= @image.white_balance %></td>
-          </tr>
-          <tr>
-            <th class="left-header">Flash:</th>
-            <td><%= @image.flash %></td>
-          </tr>
-          <tr>
-            <th class="left-header">Date:</th>
-            <td><%= @image.date_time_original %></td>
-          </tr>
-          <tr>
-            <th class="left-header">GPS Altitude:</th>
-            <td><%= @image.gps_altitude %></td>
-          </tr>
-          <tr>
-            <th class="left-header">GPS Latitude:</th>
-            <td><%= @image.gps_latitude %></td>
-          </tr>
-          <tr>
-            <th class="left-header">GPS Longitude:</th>
-            <td><%= @image.gps_longitude %></td>
-          </tr>
-        </table>
+    <% if @image.attachment.content_type == 'image/jpeg' %>
+      <div class="tab-pane" id="2">
+        <div id="exif_data">
+          <%= render :partial => 'exif_data' %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="tab-pane" id="3">
       <h3>Medium:</h3>
       <%= image_tag @image.attachment.url(:medium) %>

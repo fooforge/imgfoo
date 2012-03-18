@@ -1,0 +1,46 @@
+<table style="width:500px" class="table-striped">
+  <tr>
+    <th class="left-header">Model:</th>
+    <td><%= link_to @image.model, '#', :title => "Show all images taken with #{@image.model}" %></td>
+  </tr>
+  <tr>
+    <th class="left-header">Focal length:</th>
+    <td><%= @image.focal_length %></td>
+  </tr>
+  <tr>
+    <th class="left-header">Shutter speed:</th>
+    <td><%= @image.shutter_speed %></td>
+  </tr>
+  <tr>
+    <th class="left-header">Aperture:</th>
+    <td><%= @image.aperture %></td>
+  </tr>
+  <tr>
+    <th class="left-header">ISO:</th>
+    <td><%= @image.iso %></td>
+  </tr>
+  <tr>
+    <th class="left-header">White balance:</th>
+    <td><%= @image.white_balance %></td>
+  </tr>
+  <tr>
+    <th class="left-header">Flash:</th>
+    <td><%= @image.flash %></td>
+  </tr>
+  <tr>
+    <th class="left-header">Date:</th>
+    <td><%= @image.date_time_original %></td>
+  </tr>
+  <tr>
+    <th class="left-header">GPS Altitude:</th>
+    <td><%= @image.gps_altitude %></td>
+  </tr>
+  <tr>
+    <th class="left-header">GPS Latitude:</th>
+    <td><%= @image.gps_latitude %></td>
+  </tr>
+  <tr>
+    <th class="left-header">GPS Longitude:</th>
+    <td><%= @image.gps_longitude %></td>
+  </tr>
+</table>

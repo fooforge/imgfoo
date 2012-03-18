@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
   
   def show
     @image = Image.find(params[:id])
+    @gmaps_api_key = Settings.google_maps.api_key
   end
   
   def new

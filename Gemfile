@@ -10,6 +10,7 @@ gem 'mini_exiftool'
 gem 'delayed_job_active_record'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'rails_config'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

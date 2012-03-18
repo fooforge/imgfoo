@@ -48,6 +48,8 @@ class Image < ActiveRecord::Base
       @image = image
       # MiniExiftool.command=('exiftool -common')
       @exif_data = MiniExiftool.new @image.attachment.path
+      @exif_data.numerical = true
+      @exif_data.reload
 
       @image.update_attributes(:model => @exif_data.model,
                                :aperture => @exif_data.aperture,
