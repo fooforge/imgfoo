@@ -23,13 +23,7 @@
     </div>
   </div>
   <div class="span4">
-    <h3>Latest upload</h3>
-    <ul class="thumbnails">
-      <li>
-        <%= link_to image_tag(Image.last.attachment.url(:thumb)), image_path(Image.last) %>
-      </li>
-    </ul>
-    <% ['Most visited','Most commented'].each do |snippet| %>
+    <% ['Latest upload','Most visited','Most commented'].each do |snippet| %>
       <h3><%= snippet %></h3>
       <ul class="thumbnails">
         <li >
